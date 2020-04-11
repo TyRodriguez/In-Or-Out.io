@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+    </script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>In-or-Out</title>
 </head>
 <body>
     
+    <header>
+        <h1>In-or-Out</h1>
+    </header>
+
+    <!-- div to contain search terms -->
+    <div>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Dietary Preferences</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!" class="user-input">one</a></li>
+            <li><a href="#!" class="user-input">two</a></li>
+            <li><a href="#!" class="user-input">three</a></li>
+        </ul>
+        <button id="search-btn">Search</button>
+    </div>
+
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
