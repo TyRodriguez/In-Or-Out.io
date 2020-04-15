@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+
 
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -18,27 +20,54 @@
     <title>In-or-Out</title>
 </head>
 <body>
-    
-    <header>
-        <h1>In-or-Out</h1>
-    </header>
-
-    <!-- div to contain search terms -->
-    <div>
-        <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Dietary Preferences</a>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!" class="user-input">one</a></li>
-            <li><a href="#!" class="user-input">two</a></li>
-            <li><a href="#!" class="user-input">three</a></li>
-        </ul>
-        <button id="search-btn">Search</button>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">In-or-Out</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- you can put a link to a different .html file in href="" in case we have a second page-->
+        <li><a>placeholder</a></li> 
+      </ul>
     </div>
+  </nav>
 
+  <!-- container for search parameters and results display -->
+  <div class="container" id="search-params">
+    <div class="row">
+      <!-- search parameters -->
+      <form class="col m12 offset-m3">
+        <!-- zip code input -->
+        <div class="input-field col s4 m2">
+          <input placeholder="Zip Code" type="text">
+        </div>
+        <!-- dietary preference dropdown -->
+        <div class="col s4 m2">
+          <a class='dropdown-trigger btn blue-grey lighten-5 black-text' href='#' data-target='dropdown1'>Option</a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li class="dropdown-option">Vegan</li>
+            <li class="dropdown-option">Vegetarian</li>
+            <li class="dropdown-option">Dairy-free</li>
+        </div>
+        <div class="col s4 m2">
+          <button class="btn waves-effect waves-light yellow black-text" type="submit" name="action">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- display for search results -->
+  <div class="container grey lighten-3">
+    <div class="row">
+      <div class="col s12">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum iure voluptas, ut rerum culpa recusandae accusamus facilis, illo, autem earum blanditiis. Maxime nesciunt quae quas quidem nam doloribus cum? Accusamus sequi temporibus laudantium natus impedit, minus ipsum nemo fugit! Consequatur odio voluptate assumenda aliquam soluta officia asperiores? Soluta, rem minima!</p>
+      </div>
+    </div>
+  </div>
 
+</div>
 
     <script src="./script.js"></script>
 </body>
 </html>
+
+<!-- i need to figure out how to get the value of the inputted id from a dropdown menu so that we can incorporate that into the api call -->
+<!-- can i have a dropdown that stores information rather than taking me directly to another html file/page -->
