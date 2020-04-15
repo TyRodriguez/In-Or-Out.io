@@ -1,5 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
 .brand-logo {
     margin-left: 1rem;
+}
+
+#description-container {
+    margin-top: 1rem;
 }
 
 #search-params {
@@ -15,4 +25,10 @@
 .dropdown-option {
     padding-left: .5rem;
     padding-top: 1rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
