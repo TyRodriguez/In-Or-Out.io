@@ -1,3 +1,4 @@
+
 .brand-logo {
     margin-left: 1rem;
 }
@@ -15,4 +16,23 @@
 .dropdown-option {
     padding-left: .5rem;
     padding-top: 1rem;
+=======
+.brand-logo {
+    margin-left: 1rem;
+}
+
+#search-params {
+    margin-top: 1rem;
+    align-content: center;
+}
+
+.btn {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.dropdown-option {
+    padding-left: .5rem;
+    padding-top: 1rem;
+
 }

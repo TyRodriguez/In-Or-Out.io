@@ -1,4 +1,5 @@
 var instance = M.Dropdown.init($(".dropdown-trigger"), {coverTrigger:false}, {hover:true});
+
 $(document).ready(function(){
   //queryUrlGp = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
  // key = "AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc"
@@ -61,3 +62,4 @@ $("button").on("click", function() {
       }
     });
 });
+
