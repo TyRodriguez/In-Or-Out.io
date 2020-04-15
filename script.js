@@ -1,26 +1,63 @@
 var instance = M.Dropdown.init($(".dropdown-trigger"), {coverTrigger:false}, {hover:true});
+$(document).ready(function(){
+  //queryUrlGp = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+ // key = "AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc"
+ $.ajax({
+     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.717472,-117.831146&radius=1500&keyword=vegan&type=restaurant&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
+     method: "GET"
+   }).then(function(response) {
+    console.log("google"); 
+    console.log(response);
+    console.log("--------------");
+   });
 
-$("")
+  var queryURL = "https://developers.zomato.com/api/v2.1/";
+  var apiKey = "2431f14dc42d9b24e352507314c14c7c";
 
-    // After data comes back from the request
-    .then(function(response) {
+  $.ajax({
+    url: queryURL + "categories",
+    method: "GET",
+    headers: { "user-key": apiKey },
+}).then(function (returned) {
+    console.log("zomato category"); 
+    console.log(returned);
+    console.log("--------------");
+});
+
+$.ajax({
+  url: queryURL + "reviews",
+  method: "GET",
+  headers: { "user-key": apiKey },
+}).then(function (data) {
+  console.log("zomato review");
+  console.log(data);
+  console.log("--------------");
+});
+
+});
+
+$("button").on("click", function() {
+  // Grabbing and storing the data-animal property value from the button
+  event.preventDefault();
+  var restaurantInfo = $(this);
+  console.log("working");
+  $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.717472,-117.831146&radius=1500&keyword=vegan&type=restaurant&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
+    method: "GET"
+  }).then(function(response) {
       console.log(response);
-      // storing the data from the AJAX request in the results variable
-      var results = response.data;
-      // Looping through each result item
+      var results = response
+      console.log(results);
       for (var i = 0; i < results.length; i++) {
-        // Creating and storing a div tag
         var restaurantDiv = $("<div>");
-        // Creating a paragraph tag with the result item's rating
-        var p = $("<p>").text("Rating: " + results[i].rating);
-        // Creating and storing an image tag
-        var restaurantImage = $("<img>");
-        // Setting the src attribute of the image to a property pulled off the result item
-        restaurantImage.attr("src", results[i].images.fixed_height.url);
-        // Appending the paragraph and image tag to the animalDiv
-        restaurantDiv.append(p);
-        restaurantDiv.append(restaurantImage);
-        // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
-        $("#results").html(restaurantDiv);
+        var p = $("<p>");
+        p.text("Name: " + results[i].name);
+        p.append("Rating: " + results[i].rating);
+        // var restaurantImage = $("<img>");
+        // restaurantImage.attr("src", results[i].images.fixed_height.url);
+        // restaurantDiv.append(p);
+        // restaurantDiv.append(restaurantImage);
+        // $("#results").prepend(restaurantDiv);
       }
     });
+});
