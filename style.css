@@ -38,12 +38,12 @@ footer {
 }
 
 #results .s4 {
-    max-height: 30vh;
-    padding: 1%;
+    height: 60vh;
+    padding: 15px;
 }
 
 .s4 img {
-    height: 12vh;
+    height: 30vh;
     width: 80%;
     margin-left: 10%;
 }
