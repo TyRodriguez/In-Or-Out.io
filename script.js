@@ -32,7 +32,8 @@ $("button").on("click", function() {
         newDiv.append(rating);
         var openNow = $("<p>").text("Open: " + results[i].opening_hours.open_now);
         newDiv.append(openNow);
-        var image = $("<img>").attr("src", results[i].photos[0].html_attributions[0]);
+        var image = $("<img>").attr("src", `https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=${results[i].photos[0].photo_reference}&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc`);
+        console.log(results[i].photos[0].photo_reference);
         newDiv.append(image);
         var rowEl = $("<div>").addClass("row").append(newDiv);
         $("#results").append(rowEl);
@@ -40,26 +41,4 @@ $("button").on("click", function() {
       }
     });
 });
-// //zomato results for dine-out or delivery categories
-// $("button").on("click", function() {
-//   event.preventDefault();
-//   var queryURL = "https://developers.zomato.com/api/v2.1/";
-//   var apiKey = "2431f14dc42d9b24e352507314c14c7c";
-//   $.ajax({
-//     url: queryURL + "categories",
-//     method: "GET",
-//     headers: { "user-key": apiKey },
-// }).then(function(returned) {
-//       var returnedInfo = returned.categories;
-//       console.log(returnedInfo);
-//       for (var i = 0; i < returnedInfo.length; i++) {
-//         // var newDiv2 = $("<div>").addClass("col-s12");
-//         console.log(returnedInfo[i].categories.name);
-//         var type = $("<p>").text("Type: " + returnedInfo[i].categories.name);
-//         newDiv2.append(type);
-//         var rowEl2 = $("<div>").addClass("row").append(newDiv2);
-//         $("#results").append(rowEl2);
-        
-//       }
-//     });
-});
+})
