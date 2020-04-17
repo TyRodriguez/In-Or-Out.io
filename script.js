@@ -6,16 +6,23 @@ $(document).ready(function(){
         $('.dropdown-trigger').text($(this).text());
     });
 // var resultsEl =  $("#results");
-$("button").on("click", function() {
+$("button").on("click", async function()  {
   event.preventDefault();
   // get the user input for search terms
         var userZipCode = $(".user-zip").val().trim();
         var userDiet = $(".dropdown-trigger").text();
   var restaurantInfo = $(this);
-  $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.717472,-117.831146&radius=1500&keyword=vegan&type=restaurant&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
+  const {results} = await $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=" + userZipCode + "&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
+    method: "GET"})
+    let latlgn = results[0].geometry.location;
+    console.log(latlgn.lat);
+    console.log(latlgn.lng);
+    const googleResponse = await $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latlgn.lat + "," + latlgn.lng + "&radius=40000&keyword=" + userDiet + "&type=restaurant+meal_delivery+meal_takeaway&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
     method: "GET"
   }).then(function(response) {
+    $("#results").empty();
       var results = response.results;
       console.log(results);
       for (var i = 0; i < results.length; i++) {
@@ -40,3 +47,4 @@ $("button").on("click", function() {
     });
 });
 })
+
