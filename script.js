@@ -21,6 +21,7 @@ $(document).ready(function () {
         "&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
       method: "GET",
     });
+
     let latlgn = results[0].geometry.location;
     
     const googleResponse = await $.ajax({
@@ -38,6 +39,7 @@ $(document).ready(function () {
       var results = response.results;
       
       for (var i = 0; i < results.length; i++) {
+
         var newDiv = $("<div>")
           .addClass("col s4")
           .addClass("place" + [i]);
@@ -64,6 +66,7 @@ $(document).ready(function () {
         }
         // var openNow = $("<p>").text("Open: " + results[i].opening_hours.open_now);
         newDiv.append(openNow);
+
         if (photoRef) {
           var image = $("<img>").attr(
             "src",
@@ -71,6 +74,7 @@ $(document).ready(function () {
           );
           newDiv.prepend(image);
         }
+
         $("#results").append(newDiv);
       }
     });
