@@ -27,6 +27,10 @@ body {
     padding-top: 1rem;
 }
 
+#results {
+    padding: 10%;
+}
+
 footer {
     position: fixed;
     bottom: 0;

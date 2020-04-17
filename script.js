@@ -19,12 +19,12 @@ $("button").on("click", function() {
       var results = response.results;
       console.log(results);
       for (var i = 0; i < results.length; i++) {
-        var newDiv = $("<div>").addClass("col-s12").addClass('place'+[i]);
+        var newDiv = $("<div>").addClass("col s12").addClass('place'+[i]);
         console.log(results[i].name);
         console.log(results[i].vicinity);
         console.log(results[i].opening_hours.open_now);
         console.log(results[i].rating);
-        var name = $("<p>").text("Name: " + results[i].name);
+        var name = $("<p>").text("Name: " + results[i].name).addClass("");
         newDiv.append(name);
         var address = $("<p>").text(results[i].vicinity);
         newDiv.append(address);
@@ -62,4 +62,4 @@ $("button").on("click", function() {
         
 //       }
 //     });
-// });
+});
