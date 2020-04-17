@@ -27,12 +27,23 @@ body {
     padding-top: 1rem;
 }
 
-#results {
-    padding: 10%;
+#results-container {
+    padding-bottom: 10%;
 }
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+#results .s4 {
+    max-height: 30vh;
+    padding: 1%;
+}
+
+.s4 img {
+    height: 12vh;
+    width: 80%;
+    margin-left: 10%;
 }
