@@ -8,7 +8,7 @@ $(document).ready(function(){
 // var resultsEl =  $("#results");
 $("button").on("click", function() {
   event.preventDefault();
-   // get the user input for search terms
+  // get the user input for search terms
         var userZipCode = $(".user-zip").val().trim();
         var userDiet = $(".dropdown-trigger").text();
   var restaurantInfo = $(this);
@@ -19,7 +19,7 @@ $("button").on("click", function() {
       var results = response.results;
       console.log(results);
       for (var i = 0; i < results.length; i++) {
-        var newDiv = $("<div>").addClass("col-s12").addClass('place'+[i]);
+        var newDiv = $("<div>").addClass("col s4").addClass('place'+[i]);
         console.log(results[i].name);
         console.log(results[i].vicinity);
         console.log(results[i].opening_hours.open_now);
@@ -35,9 +35,7 @@ $("button").on("click", function() {
         var image = $("<img>").attr("src", `https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=${results[i].photos[0].photo_reference}&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc`);
         console.log(results[i].photos[0].photo_reference);
         newDiv.append(image);
-        var rowEl = $("<div>").addClass("row").append(newDiv);
-        $("#results").append(rowEl);
-        
+        $("#results").append(newDiv);
       }
     });
 });
