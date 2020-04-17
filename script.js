@@ -12,7 +12,7 @@ $(document).ready(function () {
     event.preventDefault();
     // get the user input for search terms
     var userZipCode = $(".user-zip").val().trim();
-    var userDiet = $(".dropdown-trigger").text();
+    var userDiet = $(".dropdown-trigger").text().toLowerCase();
     var restaurantInfo = $(this);
     const { results } = await $.ajax({
       url:
@@ -30,7 +30,7 @@ $(document).ready(function () {
         latlgn.lat +
         "," +
         latlgn.lng +
-        "&radius=40000&keyword=" +
+        "&radius=24000&keyword=" +
         userDiet +
         "&type=restaurant+meal_delivery+meal_takeaway&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
       method: "GET",
@@ -41,7 +41,7 @@ $(document).ready(function () {
       for (var i = 0; i < results.length; i++) {
 
         var newDiv = $("<div>")
-          .addClass("col s4")
+          .addClass("col s4 card grey lighten-3")
           .addClass("place" + [i]);
     
         var name = $("<p>").text("Name: " + results[i].name);
@@ -70,9 +70,17 @@ $(document).ready(function () {
         if (photoRef) {
           var image = $("<img>").attr(
             "src",
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&maxheight=100&photoreference=${photoRef}&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc`
-          );
+            // fixed max height and width to 200 instead of 100
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=250&maxheight=250&photoreference=${photoRef}&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc`
+          ).addClass("card-image");
           newDiv.prepend(image);
+        } else {
+            //added no image placeholder
+            var image = $("<img>").attr(
+                "src",
+            `https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101032/112815935-stock-vector-no-image-available-icon-flat-vector-illustration.jpg?ver=6`
+            ).addClass("card-image");
+            newDiv.prepend(image);
         }
 
         $("#results").append(newDiv);

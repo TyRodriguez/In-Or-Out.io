@@ -23,10 +23,6 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">In-or-Out</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- you can put a link to a different .html file in href="" in case we have a second page-->
-        <li><a>placeholder</a></li> 
-      </ul>
     </div>
   </nav>
 
@@ -39,7 +35,7 @@
     </div>
   </div>
   <!-- container for search parameters and results display -->
-  <div class="container grey lighten-3" id="search-params">
+  <div class="container" id="search-params">
     <div class="row">
       <!-- search parameters -->
       <form class="col m12 offset-m3">
@@ -48,20 +44,19 @@
           <input placeholder="Zip Code" type="text" class="user-zip">
         </div>
         <!-- dietary preference dropdown -->
-        <div class="col s4 m2">
+        <div class="col s5 m3">
           <a class='dropdown-trigger btn blue-grey lighten-5 black-text' href='#' data-target='dropdown1'>Option</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
             <li class="dropdown-option">Dairy-free</li>
+            <li class="dropdown-option">Gluten-free</li>
             <li class="dropdown-option">Halal</li>
-            <li class="dropdown-option">Keto</li>
             <li class="dropdown-option">Kosher</li>
-            <li class="dropdown-option">Pescatarian</li>
             <li class="dropdown-option">Vegan</li>
             <li class="dropdown-option">Vegetarian</li>
         </div>
   
-          <div class="col s4 m2">
+          <div class="col s3 m2">
           <button class="btn waves-effect waves-light yellow black-text" id="submit-btn">Search</button>
         </div>
         
@@ -70,7 +65,7 @@
   </div>
   <!-- display for search results -->
 
-  <div class="container grey lighten-3" id="results-container">
+  <div class="container" id="results-container">
 
     <div class="row" id="results">
     </div>

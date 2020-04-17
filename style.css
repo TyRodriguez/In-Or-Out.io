@@ -36,3 +36,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#results .s4 {
+    height: 60vh;
+    padding: 15px;
+}
+
+.s4 img {
+    height: 30vh;
+    width: 80%;
+    margin-left: 10%;
+}
