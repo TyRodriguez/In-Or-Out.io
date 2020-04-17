@@ -12,7 +12,7 @@ $(document).ready(function () {
     event.preventDefault();
     // get the user input for search terms
     var userZipCode = $(".user-zip").val().trim();
-    var userDiet = $(".dropdown-trigger").text();
+    var userDiet = $(".dropdown-trigger").text().toLowerCase();
     var restaurantInfo = $(this);
     const { results } = await $.ajax({
       url:
@@ -29,7 +29,7 @@ $(document).ready(function () {
         latlgn.lat +
         "," +
         latlgn.lng +
-        "&radius=40000&keyword=" +
+        "&radius=24000&keyword=" +
         userDiet +
         "&type=restaurant+meal_delivery+meal_takeaway&key=AIzaSyCGNI5n1Simc244_UioA4k7loLg2-V8Usc",
       method: "GET",
