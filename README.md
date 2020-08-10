@@ -20,4 +20,4 @@ Getting complex responses from the Google API
 A beautiful, working application
 
 ## Deployed Application
-https://github.com/TyRodriguez/In-Or-Out.io
+https://tyrodriguez.github.io/In-Or-Out.io/
