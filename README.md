@@ -1,5 +1,5 @@
 # In-or-Out
-Project 1 for the food delivery app
+A food search app that takes the user's specific dietary requirements and finds the best restaurants for you in your area.
 
 ## Description
 More than 1 in 3 US consumers are following a specific diet or eating pattern due to cultural, religious, allergy, health or ethical reasons. We’ve developed an app, called In-or-Out that consumers can use to quickly get a clear list of restaurants that allow delivery or take-out in the user’s area that cater to their specific dietary needs.
