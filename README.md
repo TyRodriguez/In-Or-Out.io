@@ -6,10 +6,19 @@ More than 1 in 3 US consumers are following a specific diet or eating pattern du
 
 Food search app that takes user selection of specific dietary requirements from a dropdown field, queries those needs in Google Places API based on a set radius from the user’s zip code, then returns a list of restaurants on the website that meet those needs. Users will see the restaurant name, address, rating reviews, open status, and a photo for the restaurant.
 
-User story: I am a person with dietary restrictions, I want to be able to input my dietary needs in an app so that I can find restaurants near me that are currently open, meet my dietary needs and will deliver to my address or allow takeout.
 Motivation for development:
 Inspired by the need for shelter-in-place during COVID-19 pandemic
 Created for individuals with special diets
+
+## User Story
+I am a person with dietary restrictions, I want to be able to input my dietary needs in an app so that I can find restaurants near me that are currently open, meet my dietary needs and will deliver to my address or allow takeout.
+
+## Technologies Used
+Google Geocoding API
+Google Places API
+Materialize CSS library
+jQuery 
+Draw.io
 
 ## Challenges:
 Zomato API responses were not the same as Google Places API responses
